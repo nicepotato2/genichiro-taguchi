@@ -14,7 +14,7 @@
     background:#0055aa;
     color:#ffffff;
     font-family:"IBM Plex Mono",Consolas,Monaco,"Hiragino Kaku Gothic ProN","Hiragino Sans",monospace;
-    font-size:15px;
+    font-size:13px;
     line-height:1.9;
     text-align:center;
     padding:48px 16px 64px;
@@ -31,34 +31,33 @@
     user-select:none;
   }
   h1{
-    font-size:17px;font-weight:normal;font-style:italic;letter-spacing:3px;
+    font-size:14px;font-weight:normal;font-style:italic;letter-spacing:3px;
     margin:2px 0;
   }
   .name-jp{
-    font-size:26px;font-style:normal;font-weight:bold;letter-spacing:8px;
-    margin:26px 0 4px;
+    font-size:20px;font-style:normal;font-weight:bold;letter-spacing:8px;
+    margin:14px 0 4px;
   }
   .name-en{
-    font-size:13px;font-style:italic;letter-spacing:4px;color:#ffffff;
+    font-size:11px;font-style:italic;letter-spacing:4px;color:#ffffff;
   }
   .role{
-    margin-top:14px;font-size:14px;font-style:italic;
+    margin-top:10px;font-size:12px;font-style:italic;
   }
-  nav{
-    margin-top:8px;font-size:15px;
+  .rule{
+    margin:18px 0 0;font-style:normal;letter-spacing:2px;
   }
-  nav .sep{font-style:normal}
-  .stars{margin:30px 0 6px;font-style:normal;letter-spacing:6px}
+  .rule.bottom{margin:10px 0 26px}
   h2{
-    font-size:16px;font-weight:bold;font-style:italic;letter-spacing:5px;
+    font-size:13px;font-weight:bold;font-style:italic;letter-spacing:5px;
     margin-bottom:10px;
   }
-  .sub{font-size:13px;font-style:italic;margin-bottom:16px}
+  .sub{font-size:11px;font-style:italic;margin-bottom:16px}
   section{margin-top:8px}
   .player iframe{
     display:block;width:100%;border:0;
   }
-  .ext{margin-top:12px;font-size:13px}
+  .ext{margin-top:12px;font-size:11px}
   .bio{
     font-size:14px;line-height:2.0;
   }
@@ -66,12 +65,12 @@
     font-size:14px;font-weight:bold;font-style:italic;margin:24px 0 4px;
   }
   .bio p{margin-bottom:10px}
-  footer{margin-top:6px;font-size:14px}
+  footer{margin-top:30px;font-size:12px}
   footer .contact{font-style:italic}
-  .copy{margin-top:22px;font-size:13px;font-style:italic}
+  .copy{margin-top:22px;font-size:11px;font-style:italic}
   @media (max-width:600px){
     body{padding:32px 12px 48px}
-    .name-jp{font-size:22px;letter-spacing:5px}
+    .name-jp{font-size:18px;letter-spacing:5px}
   }
 </style>
 </head>
@@ -84,15 +83,11 @@
   <div class="dash">------------------------------------------------</div>
   <div class="dash">------------------------------------------------</div>
 
+  <p class="rule">---------</p>
   <p class="name-jp">田口源一郎</p>
   <p class="name-en">GENICHIRO TAGUCHI OFFICIAL</p>
   <p class="role">drummer — tokyo, japan</p>
-
-  <nav>
-    <span class="sep">|</span> <a href="#works">Works</a>
-  </nav>
-
-  <p class="stars">* * *</p>
+  <p class="rule bottom">---------</p>
 
   <!-- ===== Works ===== -->
   <section id="works">
@@ -106,8 +101,6 @@
     </div>
     <p class="ext"><a href="https://open.spotify.com/playlist/3CmKoGvCwg0X1Mi9KgkLk8?si=5e81caee804d4aa9" target="_blank" rel="noopener">open in spotify</a></p>
   </section>
-
-  <p class="stars">* * *</p>
 
   <footer>
     <p class="contact">contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
