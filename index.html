@@ -6,225 +6,140 @@
 <title>田口源一郎 オフィシャル</title>
 <meta name="description" content="ドラマー・田口源一郎（Gen Taguchi）のオフィシャルサイト。Works / Movie / Biography">
 <style>
-  :root{
-    --bg:#0e0e0e;
-    --bg2:#1a1a1a;
-    --text:#f6f6f6;
-    --muted:#a3a3a3;
-    --line:#3e3e3e;
-    --accent:#f0523d;
-  }
   *{margin:0;padding:0;box-sizing:border-box}
-  html{scroll-behavior:smooth}
   body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:"Helvetica Neue",Arial,"Hiragino Kaku Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif;
-    line-height:1.8;
-    -webkit-font-smoothing:antialiased;
+    background:#fff;
+    color:#111;
+    font-family:"Courier New",Courier,"Hiragino Kaku Gothic ProN","Hiragino Sans",monospace;
+    font-size:15px;
+    line-height:1.9;
+    text-align:center;
+    padding:48px 16px 64px;
   }
-  a{color:inherit}
-
-  /* ---------- Header ---------- */
-  header{
-    position:fixed;top:0;left:0;right:0;z-index:100;
-    display:flex;justify-content:space-between;align-items:center;
-    padding:20px 40px;
-    background:rgba(14,14,15,.82);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--line);
+  .doc{
+    max-width:560px;
+    margin:0 auto;
   }
-  .site-title{
-    font-size:15px;font-weight:700;letter-spacing:.22em;text-decoration:none;white-space:nowrap;
+  a{color:#ee3324;text-decoration:none;font-style:italic}
+  a:hover{text-decoration:underline}
+  .dash{
+    white-space:nowrap;overflow:hidden;
+    letter-spacing:2px;color:#111;
+    user-select:none;
   }
-  .site-title small{
-    display:block;font-size:9px;font-weight:400;letter-spacing:.34em;color:var(--muted);margin-top:2px;
+  h1{
+    font-size:17px;font-weight:normal;font-style:italic;letter-spacing:3px;
+    margin:2px 0;
   }
-  nav{display:flex;align-items:center;gap:6px;font-size:13px;letter-spacing:.18em}
-  nav .sep{color:var(--muted)}
-  nav a{
-    text-decoration:none;text-transform:uppercase;padding:4px 10px;color:var(--text);
-    transition:color .2s;
+  .name-jp{
+    font-size:26px;font-style:normal;font-weight:bold;letter-spacing:8px;
+    margin:26px 0 4px;
   }
-  nav a:hover{color:var(--accent)}
-
-  /* ---------- Hero ---------- */
-  .hero{
-    min-height:92vh;
-    display:flex;flex-direction:column;justify-content:center;align-items:center;
-    text-align:center;padding:140px 24px 80px;
-    background:var(--bg);
+  .name-en{
+    font-size:13px;font-style:italic;letter-spacing:4px;color:#111;
   }
-  .hero .role{
-    font-size:12px;letter-spacing:.5em;color:var(--accent);text-transform:uppercase;margin-bottom:28px;
+  .role{
+    margin-top:14px;font-size:14px;font-style:italic;
   }
-  .hero h1{
-    font-size:clamp(44px,9vw,104px);
-    font-weight:200;letter-spacing:.14em;line-height:1.15;
+  nav{
+    margin-top:8px;font-size:15px;
   }
-  .hero h1 .en{
-    display:block;font-size:clamp(15px,2.4vw,24px);font-weight:400;
-    letter-spacing:.62em;color:var(--muted);margin-top:26px;text-transform:uppercase;
+  nav .sep{font-style:normal}
+  .stars{margin:30px 0 6px;font-style:normal;letter-spacing:6px}
+  h2{
+    font-size:16px;font-weight:bold;font-style:italic;letter-spacing:5px;
+    margin-bottom:10px;
   }
-  .hero .tagline{
-    margin-top:44px;font-size:14px;letter-spacing:.28em;color:var(--muted);
+  .sub{font-size:13px;font-style:italic;margin-bottom:16px}
+  section{margin-top:8px}
+  .player iframe{
+    display:block;width:100%;border:0;
   }
-  .hero .scroll{
-    margin-top:70px;font-size:10px;letter-spacing:.4em;color:var(--muted);text-transform:uppercase;
+  .ext{margin-top:12px;font-size:13px}
+  .bio{
+    font-size:14px;line-height:2.0;
   }
-  .hero .scroll::after{
-    content:"";display:block;width:1px;height:52px;background:var(--muted);
-    margin:14px auto 0;opacity:.6;
-  }
-
-  /* ---------- Sections ---------- */
-  main{max-width:880px;margin:0 auto;padding:0 24px}
-  section{padding:110px 0 30px}
-  .sec-head{margin-bottom:48px;text-align:center}
-  .sec-head h2{
-    font-size:clamp(26px,4.5vw,38px);font-weight:200;letter-spacing:.34em;text-transform:uppercase;
-  }
-  .sec-head p{margin-top:10px;font-size:12px;letter-spacing:.24em;color:var(--muted)}
-  .sec-head::after{
-    content:"";display:block;width:44px;height:1px;background:var(--accent);margin:26px auto 0;
-  }
-
-  .player{
-    background:var(--bg2);border:1px solid var(--line);border-radius:14px;
-    padding:14px;
-  }
-  .player iframe{display:block;width:100%;border:0;border-radius:10px}
-  .ext-link{
-    display:inline-block;margin-top:22px;font-size:12px;letter-spacing:.2em;
-    color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:3px;
-    transition:color .2s,border-color .2s;
-  }
-  .ext-link:hover{color:var(--accent);border-color:var(--accent)}
-  .center{text-align:center}
-
-  .video-wrap{
-    position:relative;padding-top:56.25%;background:#000;border-radius:14px;overflow:hidden;
-    border:1px solid var(--line);
-  }
-  .video-wrap iframe{
-    position:absolute;inset:0;width:100%;height:100%;border:0;
-  }
-
-  /* ---------- Biography ---------- */
-  .bio{font-size:15.5px;max-width:720px;margin:0 auto}
-  .bio .lead{margin-bottom:34px}
   .bio h3{
-    font-size:16px;font-weight:700;letter-spacing:.12em;margin:38px 0 10px;
-    padding-left:14px;border-left:3px solid var(--accent);
+    font-size:14px;font-weight:bold;font-style:italic;margin:24px 0 4px;
   }
-  .bio p{margin-bottom:14px;color:#e7e7e7}
-  .bio .rec{margin-top:38px}
-
-  /* ---------- Footer ---------- */
-  footer{
-    margin-top:120px;border-top:1px solid var(--line);
-    padding:64px 24px 54px;text-align:center;background:var(--bg2);
-  }
-  footer .contact{
-    font-size:15px;letter-spacing:.14em;
-  }
-  footer .contact a{
-    color:var(--accent);text-decoration:none;border-bottom:1px solid transparent;
-    transition:border-color .2s;
-  }
-  footer .contact a:hover{border-color:var(--accent)}
-  footer .copy{margin-top:30px;font-size:11px;letter-spacing:.2em;color:var(--muted)}
-
-  @media (max-width:640px){
-    header{padding:16px 18px;flex-direction:column;gap:10px}
-    .site-title{text-align:center}
-    nav{font-size:12px}
-    nav a{padding:4px 6px}
-    .hero{padding-top:170px}
-    section{padding-top:80px}
+  .bio p{margin-bottom:10px}
+  footer{margin-top:6px;font-size:14px}
+  footer .contact{font-style:italic}
+  .copy{margin-top:22px;font-size:13px;font-style:italic}
+  @media (max-width:600px){
+    body{padding:32px 12px 48px}
+    .name-jp{font-size:22px;letter-spacing:5px}
   }
 </style>
 </head>
 <body>
+<div class="doc">
 
-<header>
-  <a class="site-title" href="#top">田口源一郎 オフィシャル<small>GENICHIRO TAGUCHI OFFICIAL</small></a>
+  <div class="dash">------------------------------------------------</div>
+  <h1>--- genichiro taguchi ---</h1>
+  <div class="dash">------------------------------------------------</div>
+  <div class="dash">------------------------------------------------</div>
+  <div class="dash">------------------------------------------------</div>
+
+  <p class="name-jp">田口源一郎</p>
+  <p class="name-en">GENICHIRO TAGUCHI OFFICIAL</p>
+  <p class="role">drummer — tokyo, japan<br>soul / funk / soft rock</p>
+
   <nav>
-    <span class="sep">|</span><a href="#works">Works</a>
-    <span class="sep">|</span><a href="#movie">Movie</a>
-    <span class="sep">|</span><a href="#biography">Biography</a>
+    <span class="sep">|</span> <a href="#works">Works</a>
+    <span class="sep">|</span> <a href="#movie">Movie</a>
+    <span class="sep">|</span> <a href="#biography">Biography</a>
   </nav>
-</header>
 
-<div class="hero" id="top">
-  <p class="role">Drummer</p>
-  <h1>田口源一郎<span class="en">Genichiro Taguchi</span></h1>
-  <p class="tagline">SOUL / FUNK / SOFT ROCK — TOKYO, JAPAN</p>
-  <p class="scroll">Scroll</p>
-</div>
-
-<main>
+  <p class="stars">* * *</p>
 
   <!-- ===== Works ===== -->
   <section id="works">
-    <div class="sec-head">
-      <h2>Works</h2>
-      <p>参加作品プレイリスト「Drums by GT」</p>
-    </div>
+    <h2>WORKS</h2>
+    <p class="sub">参加作品プレイリスト「Drums by GT」</p>
     <div class="player">
       <iframe title="Drums by GT — Spotify Playlist"
-        src="https://open.spotify.com/embed/playlist/3CmKoGvCwg0X1Mi9KgkLk8?utm_source=generator&theme=0"
-        height="452" loading="lazy" allowfullscreen
+        src="https://open.spotify.com/embed/playlist/3CmKoGvCwg0X1Mi9KgkLk8?utm_source=generator"
+        height="352" loading="lazy" allowfullscreen
         allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
     </div>
-    <p class="center">
-      <a class="ext-link" href="https://open.spotify.com/playlist/3CmKoGvCwg0X1Mi9KgkLk8?si=5e81caee804d4aa9" target="_blank" rel="noopener">OPEN IN SPOTIFY →</a>
-    </p>
+    <p class="ext"><a href="https://open.spotify.com/playlist/3CmKoGvCwg0X1Mi9KgkLk8?si=5e81caee804d4aa9" target="_blank" rel="noopener">open in spotify</a></p>
   </section>
+
+  <p class="stars">* * *</p>
 
   <!-- ===== Movie ===== -->
   <section id="movie">
-    <div class="sec-head">
-      <h2>Movie</h2>
-      <p>演奏動画プレイリスト「Drums by 田口源一郎」</p>
-    </div>
-    <div class="video-wrap">
-      <iframe title="Drums by 田口源一郎 — YouTube Playlist"
-        src="https://www.youtube.com/embed/videoseries?list=PLa9Gr7oT-79g"
-        loading="lazy" allowfullscreen
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>
-    </div>
-    <p class="center">
-      <a class="ext-link" href="https://www.youtube.com/playlist?list=PLa9Gr7oT-79g" target="_blank" rel="noopener">OPEN IN YOUTUBE →</a>
-    </p>
+    <h2>MOVIE</h2>
+    <p><a href="https://www.youtube.com/playlist?list=PLa9Gr7oT-79g" target="_blank" rel="noopener">演奏動画プレイリスト「Drums by 田口源一郎」</a></p>
   </section>
+
+  <p class="stars">* * *</p>
 
   <!-- ===== Biography ===== -->
   <section id="biography">
-    <div class="sec-head">
-      <h2>Biography</h2>
-      <p>経歴</p>
-    </div>
+    <h2>BIOGRAPHY</h2>
     <div class="bio">
-      <h3>■ aint lindy</h3>
+      <h3>aint lindy</h3>
       <p>Billyrromのギタリスト、Rin Aokiのソロプロジェクト。サポートドラマーとして4年間帯同し、渋谷WWWでのワンマンライブをはじめ、渋谷WWWX、TOKIOTOKYOなど都内のライブハウスに出演。大阪、沖縄など地方公演も経験しました。</p>
 
-      <h3>■ Wave Rhythm Section</h3>
+      <h3>Wave Rhythm Section</h3>
       <p>ソウル、ファンク系オリジナルバンドのドラマーとして参加。目黒ブルースアレイでのライブを経験しました。</p>
 
-      <h3>■ ニシナオキ</h3>
+      <h3>ニシナオキ</h3>
       <p>80年代シティポップライクな楽曲が特徴のアーティスト。活動初期からドラマーとしてライブサポート、レコーディングに参加し、渋谷WWWへの出演も経験しました。</p>
 
       <p>その他、さまざまなアーティストのライブサポート、レコーディング参加の実績がございます。</p>
     </div>
   </section>
 
-</main>
+  <p class="stars">* * *</p>
 
-<footer>
-  <p class="contact">contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
-  <p class="copy">© 2026 GENICHIRO TAGUCHI. ALL RIGHTS RESERVED.</p>
-</footer>
+  <footer>
+    <p class="contact">contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
+    <p class="copy">(c) Genichiro Taguchi</p>
+  </footer>
 
+</div>
 </body>
 </html>
