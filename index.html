@@ -11,95 +11,49 @@
 <style>
   *{margin:0;padding:0;box-sizing:border-box}
   body{
-    background:#0055aa;
+    background:#000000;
     color:#ffffff;
     font-family:"IBM Plex Mono",Consolas,Monaco,"Hiragino Kaku Gothic ProN","Hiragino Sans",monospace;
     font-size:13px;
     line-height:1.9;
-    text-align:center;
-    padding:48px 16px 64px;
+    text-align:left;
+    padding:32px 20px 48px;
   }
   .doc{
-    max-width:560px;
-    margin:0 auto;
+    max-width:640px;
+    margin:0;
   }
   a{color:#ff8800;text-decoration:none;font-style:italic}
   a:hover{text-decoration:underline}
-  .dash{
-    white-space:nowrap;overflow:hidden;
-    letter-spacing:2px;color:#ffffff;
-    user-select:none;
+  .line{white-space:pre-wrap;word-break:break-all}
+  .player{
+    margin:4px 0 4px 24px;
+    max-width:560px;
   }
-  h1{
-    font-size:14px;font-weight:normal;font-style:italic;letter-spacing:3px;
-    margin:2px 0;
-  }
-  .name-jp{
-    font-size:20px;font-style:normal;font-weight:bold;letter-spacing:8px;
-    margin:14px 0 4px;
-  }
-  .name-en{
-    font-size:11px;font-style:italic;letter-spacing:4px;color:#ffffff;
-  }
-  .role{
-    margin-top:10px;font-size:12px;font-style:italic;
-  }
-  .rule{
-    margin:18px 0 0;font-style:normal;letter-spacing:2px;
-  }
-  .rule.bottom{margin:10px 0 26px}
-  h2{
-    font-size:13px;font-weight:bold;font-style:italic;letter-spacing:5px;
-    margin-bottom:10px;
-  }
-  .sub{font-size:11px;font-style:italic;margin-bottom:16px}
-  section{margin-top:8px}
   .player iframe{
     display:block;width:100%;border:0;
   }
-  .ext{margin-top:12px;font-size:11px}
-  .bio{
-    font-size:14px;line-height:2.0;
-  }
-  .bio h3{
-    font-size:14px;font-weight:bold;font-style:italic;margin:24px 0 4px;
-  }
-  .bio p{margin-bottom:10px}
-  footer{margin-top:30px;font-size:12px}
-  footer .contact{font-style:italic}
-  .copy{margin-top:22px;font-size:11px;font-style:italic}
   @media (max-width:600px){
-    body{padding:32px 12px 48px}
-    .name-jp{font-size:18px;letter-spacing:5px}
+    body{padding:24px 12px 40px}
+    .player{margin-left:16px}
   }
 </style>
 </head>
 <body>
 <div class="doc">
 
-  <div class="dash">------------------------------------------------</div>
-  <h1>--- genichiro taguchi ---</h1>
-  <div class="dash">------------------------------------------------</div>
-  <div class="dash">------------------------------------------------</div>
-  <div class="dash">------------------------------------------------</div>
-
-  <!-- ===== Works ===== -->
-  <section id="works">
-    <h2>WORKS</h2>
-    <p class="sub">参加作品プレイリスト「Drums by GT」</p>
-    <div class="player">
-      <iframe title="Drums by GT — Spotify Playlist"
-        src="https://open.spotify.com/embed/playlist/3CmKoGvCwg0X1Mi9KgkLk8?utm_source=generator"
-        height="352" loading="lazy" allowfullscreen
-        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-    </div>
-    <p class="ext"><a href="https://open.spotify.com/playlist/3CmKoGvCwg0X1Mi9KgkLk8?si=5e81caee804d4aa9" target="_blank" rel="noopener">open in spotify</a></p>
-  </section>
-
-  <footer>
-    <p class="contact">contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
-    <p class="copy">(c) Genichiro Taguchi</p>
-  </footer>
+  <p class="line">├─ genichiro taguchi</p>
+  <p class="line">├─ WORKS</p>
+  <p class="line">│</p>
+  <div class="player">
+    <iframe title="Drums by GT — Spotify Playlist"
+      src="https://open.spotify.com/embed/playlist/3CmKoGvCwg0X1Mi9KgkLk8?utm_source=generator"
+      height="352" loading="lazy" allowfullscreen
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+  </div>
+  <p class="line">│&nbsp;&nbsp;└─ <a href="https://open.spotify.com/playlist/3CmKoGvCwg0X1Mi9KgkLk8?si=5e81caee804d4aa9" target="_blank" rel="noopener">open in spotify</a></p>
+  <p class="line">└─ contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
+  <p class="line">&nbsp;&nbsp;&nbsp;(c) Genichiro Taguchi</p>
 
 </div>
 </body>
