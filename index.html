@@ -97,6 +97,23 @@
     max-width:94vw;max-height:84vh;
     border:1px solid #444;
   }
+  .lightbox video{
+    max-width:94vw;max-height:84vh;
+    border:1px solid #444;
+  }
+  .gvideo{position:relative;display:block}
+  .gvideo::after{
+    content:"▶";
+    position:absolute;top:50%;left:50%;
+    transform:translate(-50%,-50%);
+    color:#ff8800;
+    background:rgba(0,0,0,0.55);
+    border:1px solid #ff8800;
+    border-radius:50%;
+    width:44px;height:44px;
+    line-height:44px;text-align:center;
+    font-size:16px;
+  }
   .lightbox .cap{
     color:#ffffff;
     font-size:12px;
@@ -146,6 +163,7 @@
     <figure><a class="gitem" href="gallery/13.jpg"><img src="gallery/13-thumb.jpg" alt="ビクター（3）" loading="lazy"></a><figcaption>ビクター（3）</figcaption></figure>
     <figure><a class="gitem" href="gallery/14.jpg"><img src="gallery/14-thumb.jpg" alt="ビクター（4）" loading="lazy"></a><figcaption>ビクター（4）</figcaption></figure>
     <figure><a class="gitem" href="gallery/15.jpg"><img src="gallery/15-thumb.jpg" alt="下北沢THREEにて" loading="lazy"></a><figcaption>下北沢THREEにて</figcaption></figure>
+    <figure><a class="gitem gvideo" href="gallery/video-01.mp4"><img src="gallery/video-01-poster.jpg" alt="サウンドチェック片手ドラマー" loading="lazy"></a><figcaption>サウンドチェック片手ドラマー</figcaption></figure>
   </div>
   </div>
   <p class="line">└─ contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
@@ -154,22 +172,39 @@
 
 <div class="lightbox" id="lightbox">
   <img id="lb-img" src="" alt="">
+  <video id="lb-video" controls playsinline style="display:none"></video>
   <p class="cap" id="lb-cap"></p>
   <p class="close">[ close ]</p>
 </div>
 <script>
   var lb = document.getElementById('lightbox');
   var lbImg = document.getElementById('lb-img');
+  var lbVideo = document.getElementById('lb-video');
   var lbCap = document.getElementById('lb-cap');
   document.querySelectorAll('.gitem').forEach(function(a){
     a.addEventListener('click', function(e){
       e.preventDefault();
-      lbImg.src = a.getAttribute('href');
+      var href = a.getAttribute('href');
+      if (href.slice(-4) === '.mp4') {
+        lbImg.style.display = 'none';
+        lbImg.src = '';
+        lbVideo.style.display = 'inline-block';
+        lbVideo.src = href;
+        lbVideo.play();
+      } else {
+        lbVideo.style.display = 'none';
+        lbVideo.pause();
+        lbVideo.removeAttribute('src');
+        lbVideo.load();
+        lbImg.style.display = 'inline-block';
+        lbImg.src = href;
+      }
       var cap = a.parentElement.querySelector('figcaption');
       lbCap.textContent = cap ? cap.textContent : '';
       lb.classList.add('open');
     });
   });
+  lbVideo.addEventListener('click', function(e){ e.stopPropagation(); });
   var gt = document.getElementById('gtoggle');
   var gb = document.getElementById('gbody');
   var gm = document.getElementById('gmark');
@@ -178,8 +213,15 @@
     var open = gb.classList.toggle('open');
     gm.textContent = open ? '[-]' : '[+]';
   });
-  lb.addEventListener('click', function(){ lb.classList.remove('open'); lbImg.src=''; });
-  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ lb.classList.remove('open'); lbImg.src=''; } });
+  function closeLb(){
+    lb.classList.remove('open');
+    lbImg.src='';
+    lbVideo.pause();
+    lbVideo.removeAttribute('src');
+    lbVideo.load();
+  }
+  lb.addEventListener('click', closeLb);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ closeLb(); } });
 </script>
 </body>
 </html>
