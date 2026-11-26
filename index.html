@@ -59,9 +59,54 @@
   .player iframe{
     display:block;width:100%;border:0;
   }
+  .gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(150px,1fr));
+    gap:16px 12px;
+    margin:4px 0 4px 24px;
+    max-width:640px;
+  }
+  .gallery figure{margin:0}
+  .gallery a{font-style:normal}
+  .gallery img{
+    display:block;width:100%;height:auto;
+    border:1px solid #333;
+  }
+  .gallery figcaption{
+    font-size:11px;
+    color:#cccccc;
+    line-height:1.5;
+    margin-top:4px;
+    word-break:break-all;
+  }
+  .lightbox{
+    display:none;
+    position:fixed;inset:0;
+    background:rgba(0,0,0,0.92);
+    z-index:10;
+    padding:24px 16px;
+    text-align:center;
+    overflow:auto;
+  }
+  .lightbox.open{display:block}
+  .lightbox img{
+    max-width:94vw;max-height:84vh;
+    border:1px solid #444;
+  }
+  .lightbox .cap{
+    color:#ffffff;
+    font-size:12px;
+    margin-top:10px;
+  }
+  .lightbox .close{
+    color:#ff8800;
+    font-size:12px;
+    margin-top:6px;
+  }
   @media (max-width:600px){
     body{padding:24px 12px 40px}
     .player{margin-left:16px}
+    .gallery{margin-left:16px}
   }
 </style>
 </head>
@@ -77,9 +122,50 @@
       height="152" loading="lazy" allowfullscreen
       allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
   </div>
-    <p class="line">├─ <a href="https://youtu.be/-gbdsilnYEA" target="_blank" rel="noopener">video</a></p>
+  <p class="line">├─ <a href="https://youtu.be/-gbdsilnYEA" target="_blank" rel="noopener">video</a></p>
+  <p class="line">├─ GALLERY</p>
+  <p class="line">│</p>
+  <div class="gallery">
+    <figure><a class="gitem" href="gallery/01.jpg"><img src="gallery/01-thumb.jpg" alt="ゴーティにて FLANKRE ビザール録音時（1）" loading="lazy"></a><figcaption>ゴーティにて FLANKRE ビザール録音時（1）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/02.jpg"><img src="gallery/02-thumb.jpg" alt="ゴーティにて FLANKRE ビザール録音時（2）" loading="lazy"></a><figcaption>ゴーティにて FLANKRE ビザール録音時（2）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/03.jpg"><img src="gallery/03-thumb.jpg" alt="WWWにて" loading="lazy"></a><figcaption>WWWにて</figcaption></figure>
+    <figure><a class="gitem" href="gallery/04.jpg"><img src="gallery/04-thumb.jpg" alt="WWWにて aint lindy ワンマン" loading="lazy"></a><figcaption>WWWにて aint lindy ワンマン</figcaption></figure>
+    <figure><a class="gitem" href="gallery/05.jpg"><img src="gallery/05-thumb.jpg" alt="ゴーティにて FLANKRE トワイライト録音時" loading="lazy"></a><figcaption>ゴーティにて FLANKRE トワイライト録音時</figcaption></figure>
+    <figure><a class="gitem" href="gallery/06.jpg"><img src="gallery/06-thumb.jpg" alt="ゴーティにて ニシナオキ プールサイド録音時（1）" loading="lazy"></a><figcaption>ゴーティにて ニシナオキ プールサイド録音時（1）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/07.jpg"><img src="gallery/07-thumb.jpg" alt="ゴーティにて ニシナオキ プールサイド録音時（2）" loading="lazy"></a><figcaption>ゴーティにて ニシナオキ プールサイド録音時（2）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/08.jpg"><img src="gallery/08-thumb.jpg" alt="ゴーティにて ニシナオキ プールサイド録音時（3）" loading="lazy"></a><figcaption>ゴーティにて ニシナオキ プールサイド録音時（3）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/09.jpg"><img src="gallery/09-thumb.jpg" alt="ゴーティにて ニシナオキ 枇杷の花録音時" loading="lazy"></a><figcaption>ゴーティにて ニシナオキ 枇杷の花録音時</figcaption></figure>
+    <figure><a class="gitem" href="gallery/10.jpg"><img src="gallery/10-thumb.jpg" alt="つばさスタジオにて" loading="lazy"></a><figcaption>つばさスタジオにて</figcaption></figure>
+    <figure><a class="gitem" href="gallery/11.jpg"><img src="gallery/11-thumb.jpg" alt="ビクター（1）" loading="lazy"></a><figcaption>ビクター（1）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/12.jpg"><img src="gallery/12-thumb.jpg" alt="ビクター（2）" loading="lazy"></a><figcaption>ビクター（2）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/13.jpg"><img src="gallery/13-thumb.jpg" alt="ビクター（3）" loading="lazy"></a><figcaption>ビクター（3）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/14.jpg"><img src="gallery/14-thumb.jpg" alt="ビクター（4）" loading="lazy"></a><figcaption>ビクター（4）</figcaption></figure>
+    <figure><a class="gitem" href="gallery/15.jpg"><img src="gallery/15-thumb.jpg" alt="下北沢THREEにて" loading="lazy"></a><figcaption>下北沢THREEにて</figcaption></figure>
+  </div>
   <p class="line">└─ contact: <a href="mailto:stillgen4@outlook.com">stillgen4@outlook.com</a></p>
 
 </div>
+
+<div class="lightbox" id="lightbox">
+  <img id="lb-img" src="" alt="">
+  <p class="cap" id="lb-cap"></p>
+  <p class="close">[ close ]</p>
+</div>
+<script>
+  var lb = document.getElementById('lightbox');
+  var lbImg = document.getElementById('lb-img');
+  var lbCap = document.getElementById('lb-cap');
+  document.querySelectorAll('.gitem').forEach(function(a){
+    a.addEventListener('click', function(e){
+      e.preventDefault();
+      lbImg.src = a.getAttribute('href');
+      var cap = a.parentElement.querySelector('figcaption');
+      lbCap.textContent = cap ? cap.textContent : '';
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', function(){ lb.classList.remove('open'); lbImg.src=''; });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape'){ lb.classList.remove('open'); lbImg.src=''; } });
+</script>
 </body>
 </html>
